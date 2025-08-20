@@ -17,7 +17,7 @@ function App() {
   // Fetch users from database
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://crudbakend-1.onrender.com/");
+      const response = await fetch("https://crudbakend-1.onrender.com");
       const data = await response.json();
       setUsers(data);
     } catch (error) {
@@ -47,7 +47,7 @@ function App() {
     }
 
     try {
-      const response = await fetch("https://crudbakend-1.onrender.com/", {
+      const response = await fetch("https://crudbakend-1.onrender.com", {
         method: "POST",
         body: data,
       });
