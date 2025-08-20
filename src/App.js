@@ -17,7 +17,7 @@ function App() {
   // Fetch users from database
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000");
+      const response = await fetch("https://crudbakend-1.onrender.com/");
       const data = await response.json();
       setUsers(data);
     } catch (error) {
@@ -47,7 +47,7 @@ function App() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/", {
+      const response = await fetch("https://crudbakend-1.onrender.com/", {
         method: "POST",
         body: data,
       });
@@ -77,7 +77,7 @@ function App() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      const response = await fetch(`http://localhost:5000/${id}`, {
+      const response = await fetch(`https://crudbakend-1.onrender.com/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -189,7 +189,7 @@ function App() {
               <td>
                 {user.shipPhoto && (
                   <img
-                    src={`http://localhost:5000/${user.shipPhoto}`}
+                    src={`https://crudbakend-1.onrender.com/${user.shipPhoto}`}
                     alt={user.shipName}
                     width="100"
                   />
